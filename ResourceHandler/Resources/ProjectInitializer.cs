@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TelegramBot.Resources
+namespace ResourceHandler.Resources
 {
     public static class ProjectInitializer
     {
@@ -13,7 +13,7 @@ namespace TelegramBot.Resources
 
         public static void InitializeConfig()
         {
-            using (var reader = new StreamReader(@"D:\C#_Files\TelegramBot\TelegramBot\TelegramBot\Resources\Jsons\Config.json"))
+            using (var reader = new StreamReader(@"D:\C#_Files\TelegramBot\TelegramBot\ResourceHandler\Resources\Jsons\Config.json"))
             {
                 if (reader != null)
                 {

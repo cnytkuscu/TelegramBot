@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TelegramBot.Resources
+namespace ResourceHandler.Resources
 {
     public class Config
     {

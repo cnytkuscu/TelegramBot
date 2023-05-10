@@ -1,8 +1,10 @@
-﻿using Telegram.Bot;
+﻿
+using ChatGPTConnector;
+using ResourceHandler.Resources;
+using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using TelegramBot.Resources;
 
 namespace TelegramBot
 {
@@ -25,18 +27,28 @@ namespace TelegramBot
 
             var id = update.Message.Chat.Id;
 
-
             if (CheckIfCommandOrMessage(update.Message.Text))
             {
-                if (update.Message.Type != MessageType.Text)
+                string command = update.Message.Text.Replace(ProjectInitializer.Config.CommandPrefix.ToString(), "");
+                string? username = update.Message.Chat.Username;
+
+                switch (command)
                 {
-                    await bot.SendTextMessageAsync(id, "Üzgünüm sizi anlayamadım. Şuan için sadece düz metin içeriklerine cevap verebiliyorum.");
-                }
-                else
-                {
-                    string text = update.Message.Text.Replace(ProjectInitializer.Config.CommandPrefix.ToString(), "");
-                    string? username = update.Message.Chat.Username;
-                    if (text == "sa") await bot.SendTextMessageAsync(id, "Komut başarıyla çalıştırıldı.");
+                    case "chatgpt":
+                        {
+                            Connector.DoRequest("2 + 2 kaç eder ? ");
+                        }
+                        break;
+                    case "weather":
+                        {
+                            await bot.SendTextMessageAsync(id, "Hava bugün çokzel.");
+                        }
+                        break;
+                    default:
+                        {
+                            await bot.SendTextMessageAsync(id, "Üzgünüm sizi anlayamadım. Güncel komut listem için /yardim yaziniz.");
+                        }
+                        break;
                 }
             }
             else
@@ -45,10 +57,6 @@ namespace TelegramBot
                 await bot.SendTextMessageAsync(id, "Sizi dinlemememi istiyorsanız lütfen " + ProjectInitializer.Config.CommandPrefix + "dur yazınız.");
                 await bot.SendTextMessageAsync(id, "Tekrar hizmete girmem için" + ProjectInitializer.Config.CommandPrefix + "basla yazınız.");
             }
-
-
-
-
         }
 
         private static bool CheckIfCommandOrMessage(string? text)
