@@ -16,7 +16,7 @@ public class TelegramBot
 
     public void Start()
     {
-        botClient = new TelegramBotClient("6113787968:AAGBZrTRN5MfouZyNrq7-vHxorktGs8-9sk");
+        botClient = new TelegramBotClient("6059318905:AAEd43DBh6BFRwH1EbRch6zxDeF3S1OzACk");
 
         CancellationTokenSource cts;
         cts = new CancellationTokenSource();
