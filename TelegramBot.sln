@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBotConsole", "Teleg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot", "TelegramBot\TelegramBot.csproj", "{40BD7025-1004-4398-B5E6-0DCFE26AEC7A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSTeams_ChatBot", "MSTeams_ChatBot\MSTeams_ChatBot.csproj", "{B4ABE070-94BA-4C51-86F9-6278423EB41B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamsChatBot", "TeamsChatBot\TeamsChatBot.csproj", "{B20D3A06-1B9F-485E-A454-28F31045BF6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,16 @@ Global
 		{40BD7025-1004-4398-B5E6-0DCFE26AEC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40BD7025-1004-4398-B5E6-0DCFE26AEC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40BD7025-1004-4398-B5E6-0DCFE26AEC7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4ABE070-94BA-4C51-86F9-6278423EB41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4ABE070-94BA-4C51-86F9-6278423EB41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4ABE070-94BA-4C51-86F9-6278423EB41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4ABE070-94BA-4C51-86F9-6278423EB41B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20D3A06-1B9F-485E-A454-28F31045BF6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20D3A06-1B9F-485E-A454-28F31045BF6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20D3A06-1B9F-485E-A454-28F31045BF6A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B20D3A06-1B9F-485E-A454-28F31045BF6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20D3A06-1B9F-485E-A454-28F31045BF6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20D3A06-1B9F-485E-A454-28F31045BF6A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
