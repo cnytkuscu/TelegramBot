@@ -7,6 +7,7 @@ using Upgrades;
 using Upgrades.MetApi;
 using Upgrades.Models;
 using System.Speech.Synthesis;
+using System.Threading;
 
 internal class Program
 {
@@ -36,8 +37,14 @@ internal class Program
             {
                 await SendVoiceMessageAsync(bot, update.Message, cts);
             }
+            if (update.Message.Text == "/location")
+            {
+                await SendLocationMessageAsync(bot, update.Message, cts);
+            }
         }
     }
+
+
     private static async Task ErrorHandler(ITelegramBotClient bot, Exception exception, CancellationToken token)
     {
         Console.WriteLine("Error happened." + exception.Message);
@@ -56,10 +63,8 @@ internal class Program
             parseMode: ParseMode.Html,
             cancellationToken: cts);
     }
+
     #endregion
-
-
-
 
     #region Send Message as Photo
     private static async Task SendPhotoMessageAsync(ITelegramBotClient botClient, Message message, CollectionItem collectionItem, CancellationToken cancellationToken)
@@ -90,4 +95,25 @@ internal class Program
         throw new Exception("Error: Couldn't get random image");
     }
     #endregion
+
+    #region Send Message As Location
+    private static async Task SendLocationMessageAsync(ITelegramBotClient bot, Message message, CancellationToken cts)
+    {
+        double randomLatitude = new Random().NextDouble() * 180 - 90;
+        double randomLongitude = new Random().NextDouble() * 360 - 180;
+
+        Location location = new Location
+        {
+            Latitude = randomLatitude,
+            Longitude = randomLongitude
+        };
+
+        await bot.SendLocationAsync(
+            chatId: message.Chat.Id,
+            latitude: location.Latitude,
+            longitude: location.Longitude,
+            cancellationToken: cts);
+    }
+    #endregion
+
 }
