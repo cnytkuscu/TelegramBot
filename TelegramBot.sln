@@ -9,6 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBotConsole", "Teleg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot", "TelegramBot\TelegramBot.csproj", "{40BD7025-1004-4398-B5E6-0DCFE26AEC7A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part_3_Upgrades", "Part_3_Upgrades", "{7E365A92-0FE8-457C-9668-343B36B2D927}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Upgrades", "Upgrades\Upgrades.csproj", "{AEAE5F1E-3B16-4740-A21C-D89333EE9C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
